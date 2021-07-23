@@ -1,4 +1,4 @@
-# # EDK2 UEFI Firmware For Nvidia Tegra 3
+# EDK2 UEFI Firmware For Nvidia Tegra 3
 
 EDK2 implementation for Nvidia Tegra 3
 
