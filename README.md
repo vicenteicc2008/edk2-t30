@@ -6,6 +6,10 @@ EDK2 implementation for Nvidia Tegra 3
 
 1. LG Optimus 4X
 2. ZTE Era
+3. ZTE U950
+4. HTC One X
+5. Acer Iconia Tab A700
+6. BLU Quattro 4.5 HD
 
 ## Dependencies
 
@@ -22,8 +26,8 @@ sudo apt install build-essential uuid-dev iasl git nasm gcc-aarch64-linux-gnu ab
 1.Clone this project
 
 ```bash
-git clone https://github.com/edk2-porting/edk2-sdm845.git --depth=1
-cd edk2-sdm845
+git clone https://github.com/Vicc2008/edk2-tegra3.git --depth=1
+cd edk2-tegra3
 ```
 
 2.Build this project
@@ -35,15 +39,7 @@ bash build.sh --device DEVICE
 3.Boot the image
 
 ```bash
-fastboot boot boot_DEVICE.img
-```
-
-(DEVICE is the codename of your phone.)
-
-Additionally, you can flash the image to recovery to achieve dual-boot.
-
-```bash
-fastboot flash recovery boot_DEVICE.img
+fastboot flash boot boot.img
 ```
 
 ## License
@@ -52,6 +48,6 @@ This project is released under the [WTFPL LICENSE](http://www.wtfpl.net/).
 
 ## WARNING
 
-**DO NOT EVER TRY TO PORT IT TO *SONY* DEVICES**
+**DO NOT EVER TRY TO PORT IT TO *SONY* AND *GOOGLE* DEVICES**
 
 **YOUR eMMC WILL BE WIPED CLEAN!!!**
