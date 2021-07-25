@@ -8,8 +8,9 @@ EDK2 implementation for Nvidia Tegra 3
 2. ZTE Era
 3. ZTE U950
 4. HTC One X
-5. Acer Iconia Tab A700
-6. BLU Quattro 4.5 HD
+5. Asus Eee Pad Transformer Prime
+6. Acer Iconia Tab A700
+7. BLU Quattro 4.5 HD
 
 ## Dependencies
 
