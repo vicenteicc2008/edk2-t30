@@ -49,6 +49,6 @@ This project is released under the [WTFPL LICENSE](http://www.wtfpl.net/).
 
 ## WARNING
 
-**DO NOT EVER TRY TO PORT IT TO *SONY* AND *GOOGLE* DEVICES**
+**DO NOT EVER TRY TO PORT IT TO *SONY* DEVICES**
 
 **YOUR eMMC WILL BE WIPED CLEAN!!!**
