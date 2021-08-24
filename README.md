@@ -11,6 +11,7 @@ EDK2 implementation for Nvidia Tegra 3
 5. Asus Eee Pad Transformer Prime
 6. Acer Iconia Tab A700
 7. BLU Quattro 4.5 HD
+8. Asus Google Nexus 7
 
 ## Dependencies
 
@@ -42,10 +43,6 @@ bash build.sh --device DEVICE
 ```bash
 fastboot flash boot boot.img
 ```
-
-## License
-
-This project is released under the [WTFPL LICENSE](http://www.wtfpl.net/).
 
 ## WARNING
 
