@@ -38,7 +38,7 @@ cd edk2-tegra3
 bash build.sh --device DEVICE
 ```
 
-3.Boot the image
+3.Flash the boot image
 
 ```bash
 fastboot flash boot boot.img
