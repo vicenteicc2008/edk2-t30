@@ -11,7 +11,7 @@ EDK2 implementation for Nvidia Tegra 3
 5. Asus Eee Pad Transformer Prime
 6. Acer Iconia Tab A700
 7. BLU Quattro 4.5 HD
-8. Asus Google Nexus 7
+8. Asus Google Nexus 7 (2012)
 
 ## Dependencies
 
