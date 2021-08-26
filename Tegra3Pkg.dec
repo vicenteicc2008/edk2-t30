@@ -1,0 +1,34 @@
+[Defines]
+  DEC_SPECIFICATION              = 0x00010005
+  PACKAGE_NAME                   = Tegra3Pkg
+  PACKAGE_GUID                   = 1bde5238-07ee-4ca3-a827-452fb4717ad7
+  PACKAGE_VERSION                = 0.1
+
+[Includes.common]
+  Include                        # Root include for the package
+
+[Guids.common]
+  gTegra3PkgTokenSpaceGuid = { 0x1900628e, 0x0a8a, 0x4099, { 0x8d, 0xe5, 0xf2, 0x08, 0xff, 0x80, 0xc4, 0xbf } }
+
+[Protocols]
+  gTegra3ClockManagementProtocolGuid = { 0x9c11c45d, 0xc497, 0x4e95, { 0xac, 0x18, 0x9f, 0x91, 0xca, 0x8b, 0x9a, 0xd0 } }
+  gTegraUBootClockManagementProtocolGuid = { 0x9c11c451, 0xc497, 0x4e95, { 0xac, 0x18, 0x9f, 0x91, 0xca, 0x8b, 0x9a, 0xd0 } }
+  gPmicProtocolGuid = { 0x9c11c45d, 0xc497, 0x4e95, { 0xac, 0x18, 0x9f, 0x91, 0xca, 0x8b, 0x9a, 0xd1 } }
+  gTegraPinMuxProtocolGuid = { 0x9c11c45d, 0xc497, 0x4e95, { 0xac, 0x18, 0x9f, 0x91, 0xca, 0x8b, 0x15, 0xd1 } }
+
+[PcdsFixedAtBuild.common]
+  # Simple FrameBuffer
+  gTegra3PkgTokenSpaceGuid.PcdMipiFrameBufferAddress|0xc0000000|UINT32|0x0000a400
+  # It's actually vertical.
+  # Maybe in the future we can workaround this in EL2
+  gTegra3PkgTokenSpaceGuid.PcdMipiFrameBufferWidth|800|UINT32|0x0000a401
+  gTegra3PkgTokenSpaceGuid.PcdMipiFrameBufferHeight|1280|UINT32|0x0000a402
+  gTegra3PkgTokenSpaceGuid.PcdMipiFrameBufferPixelBpp|32|UINT32|0x0000a403
+  gTegra3PkgTokenSpaceGuid.PcdMipiFrameBufferVisibleWidth|800|UINT32|0x0000a405
+  gTegra3PkgTokenSpaceGuid.PcdMipiFrameBufferVisibleHeight|1280|UINT32|0x0000a406
+
+  # Carveout information
+  gTegra3PkgTokenSpaceGuid.PcdTrustZoneCarveoutSize|0|UINT64|0x0000a404
+
+[PcdsDynamic]
+  gTegra3PkgTokenSpaceGuid.PcdDynamicStub|0|UINT64|0x0001a400
