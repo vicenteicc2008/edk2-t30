@@ -15,6 +15,16 @@
 # Defines Section - statements that will be processed to create a Makefile.
 #
 ################################################################################
+[Defines]
+  PLATFORM_NAME                  = Tegra3Pkg
+  PLATFORM_GUID                  = f5e5d453-b715-4e01-8c50-fb298a273fd7
+  PLATFORM_VERSION               = 0.1
+  DSC_SPECIFICATION              = 0x00010005
+  OUTPUT_DIRECTORY               = Build/NintendoSwitch-$(ARCH)
+  SUPPORTED_ARCHITECTURES        = AARCH64
+  BUILD_TARGETS                  = DEBUG|RELEASE
+  SKUID_IDENTIFIER               = DEFAULT
+  FLASH_DEFINITION               = Tegra3Pkg/Devices/SonyTabletS.fdf
 
 !include Tegra3Pkg/CommonDsc.dsc.inc
 
