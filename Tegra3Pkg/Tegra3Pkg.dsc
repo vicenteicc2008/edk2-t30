@@ -118,7 +118,7 @@
   # PlatformHookLib|MdeModulePkg/Library/BasePlatformHookLibNull/BasePlatformHookLibNull.inf
 
   # 30 Serial
-  SerialPortLib|Tegra3Pkg/Library/Tegra30SerialPortLib/Tegra30SerialPortLib.inf
+  SerialPortLib|Tegra3Pkg/Library/Tegra8250SerialPortLib/Tegra8250SerialPortLib.inf
 
   # System Libraries
   EfiResetSystemLib|ArmPkg/Library/ArmPsciResetSystemLib/ArmPsciResetSystemLib.inf
