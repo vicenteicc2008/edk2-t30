@@ -44,3 +44,9 @@ bash build.sh --device DEVICE
 ```bash
 fastboot boot boot.img
 ```
+
+## Credits
+
+@strongtz for his original `edk2-sdm845`
+
+@imbushuo for his original `NintendoSwitchPkg`
