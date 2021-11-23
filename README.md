@@ -45,7 +45,7 @@ bash build.sh --device DEVICE
 fastboot boot boot.img
 ```
 
-4.Flash the boot image
+4.or Flash the boot image
 
 ```bash
 fastboot flash boot boot.img
