@@ -29,7 +29,7 @@ sudo apt install build-essential uuid-dev iasl git nasm gcc-aarch64-linux-gnu ab
 1.Clone this project
 
 ```bash
-git clone https://github.com/Vicc2008/edk2-tegra3.git --depth=1
+git clone https://github.com/Vicc2008/edk2-tegra3.git
 cd edk2-tegra3
 ```
 
