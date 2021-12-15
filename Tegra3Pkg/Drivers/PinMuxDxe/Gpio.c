@@ -14,7 +14,7 @@
 #include <Protocol/PinMux.h>
 
 #include "Include/Gpio.h"
-#include "Tegra210/Gpio.h"
+#include "Tegra30/Gpio.h"
 
 static const int CONFIG_SFIO = 0;
 static const int CONFIG_GPIO = 1;

@@ -11,45 +11,39 @@
 //
 //
 
-#include <AsmMacroIoLibV8.h>
+#include <AsmMacroIoLib.h>
 #include <Library/ArmLib.h>
 
 ASM_FUNC(ArmPlatformPeiBootAction)
-  // U-Boot or ATF set SPSel as #0, this is cursed
-  // To ensure EL0 stack can be utilized by 
-  // exception handler, set SPSel to 1
-  msr  SPSel, #1
-  ret
+  bx    lr
 
 //UINTN
 //ArmPlatformGetCorePosition (
 //  IN UINTN MpId
 //  );
-// With this function: CorePos = (ClusterId * 4) + CoreId
 ASM_FUNC(ArmPlatformGetCorePosition)
-  and   x1, x0, #ARM_CORE_MASK
-  and   x0, x0, #ARM_CLUSTER_MASK
-  add   x0, x1, x0, LSR #6
-  ret
+  and   r1, r0, #ARM_CORE_MASK
+  and   r0, r0, #ARM_CLUSTER_MASK
+  add   r0, r1, r0, LSR #7
+  bx    lr
 
 //UINTN
 //ArmPlatformGetPrimaryCoreMpId (
 //  VOID
 //  );
 ASM_FUNC(ArmPlatformGetPrimaryCoreMpId)
-  MOV32  (w0, FixedPcdGet32 (PcdArmPrimaryCore))
-  ret
+  MOV32  (r0, FixedPcdGet32 (PcdArmPrimaryCore))
+  bx    lr
 
 //UINTN
 //ArmPlatformIsPrimaryCore (
 //  IN UINTN MpId
 //  );
 ASM_FUNC(ArmPlatformIsPrimaryCore)
-  MOV32  (w1, FixedPcdGet32 (PcdArmPrimaryCoreMask))
-  and   x0, x0, x1
-  MOV32  (w1, FixedPcdGet32 (PcdArmPrimaryCore))
-  cmp   w0, w1
-  mov   x0, #1
-  mov   x1, #0
-  csel  x0, x0, x1, eq
-  ret
+  MOV32  (r1, FixedPcdGet32 (PcdArmPrimaryCoreMask))
+  and   r0, r0, r1
+  MOV32  (r1, FixedPcdGet32 (PcdArmPrimaryCore))
+  cmp   r0, r1
+  moveq r0, #1
+  movne r0, #0
+  bx    lr

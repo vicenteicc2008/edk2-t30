@@ -34,8 +34,8 @@
   ClockLib
 
 [Protocols]
-  gTegra210ClockManagementProtocolGuid
+  gTegra3ClockManagementProtocolGuid
   gPmicProtocolGuid
 
 [Depex]
-  gTegra210ClockManagementProtocolGuid
+  gTegra3ClockManagementProtocolGuid

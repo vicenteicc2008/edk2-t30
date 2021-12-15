@@ -11,18 +11,18 @@
 
 #include "Serial.h"
 
-static struct tegra30_uart * const uart_ptr = (void *) CONFIG_CONSOLE_SERIAL_TEGRA30_UART_ADDRESS;
+static struct tegra210_uart * const uart_ptr = (void *) CONFIG_CONSOLE_SERIAL_TEGRA210_UART_ADDRESS;
 
-static void tegra30_uart_tx_flush(void);
-static int tegra30_uart_tst_byte(void);
+static void tegra210_uart_tx_flush(void);
+static int tegra210_uart_tst_byte(void);
 
-static void tegra30_uart_init(void)
+static void tegra210_uart_init(void)
 {
 	// Use a hardcoded divisor for now.
 	const unsigned divisor = 221;
 	const UINT8 line_config = UART8250_LCR_WLS_8; // 8n1
 
-	tegra30_uart_tx_flush();
+	tegra210_uart_tx_flush();
 
 	// Disable interrupts.
 	write8(&uart_ptr->ier, 0);
@@ -42,25 +42,25 @@ static void tegra30_uart_init(void)
 		UART8250_FCR_CLEAR_XMIT);
 }
 
-static void tegra30_uart_tx_byte(unsigned char data)
+static void tegra210_uart_tx_byte(unsigned char data)
 {
 	while (!(read8(&uart_ptr->lsr) & UART8250_LSR_THRE));
 	write8(&uart_ptr->thr, data);
 }
 
-static void tegra30_uart_tx_flush(void)
+static void tegra210_uart_tx_flush(void)
 {
 	while (!(read8(&uart_ptr->lsr) & UART8250_LSR_TEMT));
 }
 
-static unsigned char tegra30_uart_rx_byte(void)
+static unsigned char tegra210_uart_rx_byte(void)
 {
-	if (!tegra30_uart_tst_byte())
+	if (!tegra210_uart_tst_byte())
 		return 0;
 	return read8(&uart_ptr->rbr);
 }
 
-static int tegra30_uart_tst_byte(void)
+static int tegra210_uart_tst_byte(void)
 {
 	return (read8(&uart_ptr->lsr) & UART8250_LSR_DR) == UART8250_LSR_DR;
 }
@@ -72,7 +72,7 @@ SerialPortInitialize
 	VOID
 )
 {
-	tegra30_uart_init();
+	tegra210_uart_init();
 	return RETURN_SUCCESS;
 }
 
@@ -88,7 +88,7 @@ SerialPortWrite
 
 	while (Buffer < Final)
 	{
-		tegra30_uart_tx_byte(*Buffer++);
+		tegra210_uart_tx_byte(*Buffer++);
 	}
 
 	return NumberOfBytes;
@@ -112,7 +112,7 @@ SerialPortRead
 		//
     	// Wait for the serial port to have some data.
     	//
-		while (tegra30_uart_tst_byte() == 0) {
+		while (tegra210_uart_tst_byte() == 0) {
 		}
 		
 		//
@@ -131,7 +131,7 @@ SerialPortPoll
 	VOID
 )
 {
-	if (tegra30_uart_tst_byte() != 0) {
+	if (tegra210_uart_tst_byte() != 0) {
 		return TRUE;
 	}
 
@@ -174,8 +174,8 @@ SerialPortSetAttributes
 }
 
 UINTN SerialPortFlush(VOID)
-	tegra30_uart_tx_flush();
 {
+	tegra210_uart_tx_flush();
 	return 0;
 }
 

@@ -54,8 +54,7 @@
 #include <Library/UefiBootServicesTableLib.h>
 
 /* Build-time generated ReleaseInfo.h will override the default one */
-#include "ReleaseInfo.h"
-#include <FwReleaseInfo.h>
+#include <ReleaseInfo.h>
 
 /***********************************************************************
 	SMBIOS data definition  TYPE0  BIOS Information

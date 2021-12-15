@@ -11,6 +11,9 @@
 [Sources.common]
   SimpleFbDxe.c
 
+[BuildOptions.ARM]
+  GCC:*_*_*_CC_FLAGS = -Wno-unused-function -Wno-unused-variable -Wno-pointer-to-int-cast -Wno-int-to-pointer-cast
+
 [Packages]
   MdePkg/MdePkg.dec
   MdeModulePkg/MdeModulePkg.dec

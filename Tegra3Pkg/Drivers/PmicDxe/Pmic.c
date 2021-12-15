@@ -95,7 +95,7 @@ PmicDxeInitialize
     UINT8 bVal;
 
     Status = gBS->LocateProtocol(
-        &gTegra210ClockManagementProtocolGuid,
+        &gTegra3ClockManagementProtocolGuid,
         NULL,
         (VOID**) &mClockProtocol
     );

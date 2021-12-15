@@ -26,6 +26,10 @@
   gTegra3PkgTokenSpaceGuid.PcdMipiFrameBufferPixelBpp|32|UINT32|0x0000a403
   gTegra3PkgTokenSpaceGuid.PcdMipiFrameBufferVisibleWidth|800|UINT32|0x0000a405
   gTegra3PkgTokenSpaceGuid.PcdMipiFrameBufferVisibleHeight|1280|UINT32|0x0000a406
+  # SMBIOS
+  gTegra3PkgTokenSpaceGuid.PcdSmbiosSystemModel|"Sony Xperia Tablet S (SGPT1211)"|VOID*|0x0000a301
+  gTegra3PkgTokenSpaceGuid.PcdSmbiosProcessorModel|"NVIDIA Tegra 3"|VOID*|0x0000a302
+  gTegra3PkgTokenSpaceGuid.PcdSmbiosSystemRetailModel|"SGPT1211"|VOID*|0x0000a303
 
   # Carveout information
   gTegra3PkgTokenSpaceGuid.PcdTrustZoneCarveoutSize|0|UINT64|0x0000a404

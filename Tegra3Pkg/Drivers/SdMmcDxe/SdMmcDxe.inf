@@ -16,7 +16,7 @@
   MdePkg/MdePkg.dec
   MdeModulePkg/MdeModulePkg.dec
   EmbeddedPkg/EmbeddedPkg.dec
-  Tegra3Pkg/Tegra3.dec
+  Tegra3Pkg/Tegra3Pkg.dec
 
 [LibraryClasses]
   ArmLib
@@ -40,10 +40,10 @@
   DmaBounceBufferLib
 
 [BuildOptions.ARM]
-  GCC:*_*_*_CC_FLAGS = -Wno-unused-function -Wno-unused-variable
+  GCC:*_*_*_CC_FLAGS = -Wno-unused-function -Wno-unused-variable -Wno-pointer-to-int-cast -Wno-int-to-pointer-cast
 
 [Protocols]
-  gTegra30ClockManagementProtocolGuid
+  gTegra3ClockManagementProtocolGuid
   gTegraUBootClockManagementProtocolGuid
   gPmicProtocolGuid
   gEfiBlockIoProtocolGuid

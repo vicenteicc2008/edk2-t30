@@ -9,7 +9,7 @@
   ClockLib.c
 
 [BuildOptions.ARM]
-  GCC:*_*_*_CC_FLAGS = -Wno-int-to-pointer-cast
+  GCC:*_*_*_CC_FLAGS = -Wno-int-to-pointer-cast -Wno-overflow -Wno-error
 
 [Packages]
   MdePkg/MdePkg.dec

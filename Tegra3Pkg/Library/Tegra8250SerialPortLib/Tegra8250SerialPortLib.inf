@@ -6,7 +6,7 @@
   LIBRARY_CLASS  = SerialPortLib
 
 [Sources.common]
-  Tegra30SerialLib.c
+  Tegra8250SerialPortLib.c
 
 [Packages]
   MdePkg/MdePkg.dec

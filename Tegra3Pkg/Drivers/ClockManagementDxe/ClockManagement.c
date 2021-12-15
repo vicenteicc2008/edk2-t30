@@ -228,7 +228,7 @@ ClockManagementDxeInitialize
 
     Status = gBS->InstallMultipleProtocolInterfaces(
         &ProtoHandle,
-        &gTegra210ClockManagementProtocolGuid,
+        &gTegra3ClockManagementProtocolGuid,
         &mClockProto,
         &gTegraUBootClockManagementProtocolGuid,
         &mUbootClockProto,
